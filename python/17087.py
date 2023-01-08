@@ -18,5 +18,7 @@ if idx == 0 and len(position_list) > 2:
     print(
         gcd(position_list[idx + 1] - s, position_list[idx + 2] - position_list[idx + 1])
     )
+elif idx == len(position_list) - 1:
+    print(gcd(s - position_list[idx], position_list[idx] - position_list[idx - 1]))
 else:
     print(gcd(s - position_list[idx], position_list[idx + 1] - s))
