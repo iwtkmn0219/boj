@@ -19,7 +19,6 @@ def binary_search(ls: list, x: int) -> int:
 t = int(input())
 for tc in range(t):
     a_length, b_length = map(int, input().split())
-    A = sorted(list(map(int, input().split())))
     B = sorted(list(map(int, input().split())))
     # print("A >", A)
     # print("B >", B)
