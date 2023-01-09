@@ -19,14 +19,10 @@ def binary_search(ls: list, x: int) -> int:
 t = int(input())
 for tc in range(t):
     a_length, b_length = map(int, input().split())
+    A = list(map(int, input().split()))
     B = sorted(list(map(int, input().split())))
-    # print("A >", A)
-    # print("B >", B)
     cnt = 0
     for a in A:
         tmp = binary_search(B, a)
-        # print("a >", a, end=', ')
-        # print("tmp >", tmp)
         cnt += tmp
-    # print("answer >", end=' ')
     print(cnt)
