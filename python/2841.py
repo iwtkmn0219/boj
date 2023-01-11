@@ -1,3 +1,8 @@
+import sys
+
+input = sys.stdin.readline
+
+
 def binary_search(ls: list, value: int) -> int:
     start = 0
     end = len(ls) - 1
