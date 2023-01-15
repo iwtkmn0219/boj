@@ -3,7 +3,7 @@ clothes = list(map(int, input().split()))
 closet = {}
 
 if n == 1:
-    print("Happy")
+    print("Unhappy")
 else:
     happy = True
     for c in clothes:
