@@ -1,6 +1,8 @@
+import sys
+
 ls = [120, 24, 6, 2, 1]
 while True:
-    n = input()
+    n = sys.stdin.readline().rstrip()
     if n == "0":
         break
     tmp = f"{n:0>5}"
