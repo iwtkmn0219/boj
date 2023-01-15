@@ -1,17 +1,6 @@
 n = int(input())
 clothes = list(map(int, input().split()))
-closet = {}
-
-if n == 1:
-    print("Unhappy")
+if n == 1 and clothes[0] == 1:
+    print("Happy")
 else:
-    happy = True
-    for c in clothes:
-        if c not in closet:
-            closet[c] = 1
-        else:
-            closet[c] += 1
-            if closet[c] > n // 2:
-                happy = False
-                break
-    print("Happy" if happy else "Unhappy")
+    print("Happy" if (max(clothes) <= sum(clothes) // 2) else "Unhappy")
