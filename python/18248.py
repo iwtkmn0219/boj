@@ -1,7 +1,6 @@
 n, m = map(int, input().split())
 a = [list(map(int, input().split())) for _ in range(n)]
 ls = [[0] * m for _ in range(n)]
-print(ls)
 
 possible = True
 for i in range(n):
