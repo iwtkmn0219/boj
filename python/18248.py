@@ -1,7 +1,6 @@
 n, m = map(int, input().split())
 a = [list(map(int, input().split())) for _ in range(n)]
 ls = [[0] * m for _ in range(n)]
-
 possible = True
 for i in range(n):
     for j in range(m):
@@ -10,9 +9,9 @@ for i in range(n):
 
         if i == 0:
             if a[i][j] == 1:
-                ls[i][j] = 0
-            else:
                 ls[i][j] = 1
+            else:
+                ls[i][j] = 2
             continue
 
         if j < m - 1:
@@ -24,5 +23,7 @@ for i in range(n):
                     possible = False
 
         if a[i][j] == 0:
-            ls[i][j] += 1
+            ls[i][j] = ls[i - 1][j] + 2
+        else:
+            ls[i][j] = ls[i - 1][j] + 1
 print("YES" if possible else "NO")
