@@ -1,2 +1,5 @@
 x, y = map(int, input().split())
-print(x + y)
+if y > x:
+    print(y - x)
+else:
+    print(x + y)
