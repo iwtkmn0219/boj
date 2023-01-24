@@ -10,5 +10,5 @@ while True:
         break
     distance = inch_to_miles(PI * length * rpm)
     mph = distance / (sec / 3600)
-    print(f"Trip #{testcase}: {round(distance, 2)} {round(mph, 2)}")
+    print(f"Trip #{testcase}: {round(distance, 2):.2f} {round(mph, 2):.2f}")
     testcase += 1
