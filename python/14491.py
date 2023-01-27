@@ -2,7 +2,7 @@ def nineth_number(n: int) -> str:
     if n < 9:
         return str(n)
     else:
-        return str(n % 9) + nineth_number(n // 9)
+        return nineth_number(n // 9) + str(n % 9)
 
 
 n = int(input())
