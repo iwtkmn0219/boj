@@ -6,9 +6,9 @@ for tc in range(t):
         if r == 0:
             print(".." + "+-" * (col - 1) + "+")
         elif r == 1:
-            print(".." + "|-" * (col - 1) + "|")
+            print(".." + "|." * (col - 1) + "|")
         else:
             if r % 2 == 0:
                 print("+-" * col + "+")
             else:
-                print("|-" * col + "|")
+                print("|." * col + "|")
