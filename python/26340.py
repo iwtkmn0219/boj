@@ -7,4 +7,4 @@ for _ in range(n):
             a //= 2
         else:
             b //= 2
-    print(f"{max(a, b)} {min(a, b)}")
+    print(f"{max(a, b)} {min(a, b)}\n")
