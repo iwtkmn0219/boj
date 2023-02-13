@@ -1,16 +1,16 @@
 monkey, dog = map(int, input().split())
-day_cnt = 0
-prev = 0
 remaining = dog - monkey
-while monkey < dog:
-    if prev * 2 < remaining:
-        prev += 1
-        monkey += prev
-    elif prev * 2 > remaining:
-        prev = max(prev - 1, 1)
-        monkey += prev
-    else:
-        monkey += prev
-    day_cnt += 1
-    remaining = dog - monkey
-print(day_cnt)
+if remaining == 0:
+    print(0)
+elif remaining == 1:
+    print(1)
+elif remaining == 2:
+    print(2)
+else:
+    for i in range(1, 100000000):
+        if i * (i + 1) < remaining <= i * (i + 1) + (i + 1):
+            print(i * 2 + 1)
+            break
+        if i * (i + 1) + (i + 1) < remaining <= (i + 1) * (i + 2):
+            print(i * 2 + 2)
+            break
