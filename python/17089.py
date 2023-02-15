@@ -1,6 +1,6 @@
 import sys
 
-sys.setrecursionlimit(1000000000)
+sys.setrecursionlimit(5000)
 input = sys.stdin.readline
 
 
@@ -8,7 +8,7 @@ def combination(pos: int, cnt: int, value: str) -> None:
     if cnt == 3:
         ls.append(value)
         return
-    if pos > 100:
+    if pos > 4001:
         return -1
 
     if cnt == 0:
