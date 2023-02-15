@@ -1,27 +1,5 @@
-import sys
-
-sys.setrecursionlimit(5000)
-input = sys.stdin.readline
-
-
-def combination(pos: int, cnt: int, value: str) -> None:
-    if cnt == 3:
-        ls.append(value)
-        return
-    if pos > 4001:
-        return -1
-
-    if cnt == 0:
-        combination(pos + 1, cnt + 1, value + str(pos))
-    else:
-        combination(pos + 1, cnt + 1, value + " " + str(pos))
-    combination(pos + 1, cnt, value)
-
-
-ls = []
-combination(1, 0, "")
 n, m = map(int, input().split())
-graph = [[0] * (4001) for _ in range(4001)]
+graph = [[0] * (n + 1) for _ in range(n + 1)]
 friend_quantity = [0] * (n + 1)
 for _ in range(m):
     a, b = map(int, input().split())
@@ -31,10 +9,16 @@ for _ in range(m):
     friend_quantity[b] += 1
 
 minimum = 15000
-for i, e in enumerate(ls):
-    a, b, c = map(int, e.split())
-    if graph[a][b] == 1 and graph[b][c] == 1 and graph[c][a] == 1:
-        minimum = min(
-            minimum, friend_quantity[a] + friend_quantity[b] + friend_quantity[c] - 6
-        )
+for i in range(1, n - 1):
+    for j in range(i + 1, n):
+        if graph[i][j]:
+            for k in range(j + 1, n + 1):
+                if graph[i][k] == 1 and graph[j][k]:
+                    minimum = min(
+                        minimum,
+                        friend_quantity[i]
+                        + friend_quantity[j]
+                        + friend_quantity[k]
+                        - 6,
+                    )
 print(minimum if minimum < 15000 else -1)
