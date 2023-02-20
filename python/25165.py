@@ -13,7 +13,7 @@ while x < m and y < n:
     else:
         d_idx = (d_idx + 1) % 2
         y += 1
-    if x == c and y == r:
+    if x == c - 1 and y == r - 1:
         monster = True
         break
 if monster:
