@@ -13,4 +13,5 @@ for _ in range(3):
             maximum = max(maximum, cnt)
             cnt = 1
             prev = line[i]
+    maximum = max(maximum, cnt)
     print(maximum)
