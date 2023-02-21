@@ -6,7 +6,7 @@ d_idx = 0 if d == 1 else 1
 x = a - 1
 y = 0
 monster = False
-while x < m and y < n:
+while x < m - 1 or y < n - 1:
     xx = x + direction[d_idx]
     if 0 <= xx < m:
         x = xx
