@@ -8,15 +8,14 @@ for r in range(n):
         if c == 0:
             length = 1
             continue
-        elif c == n - 1 and length >= 2:
-            cnt += 1
-            continue
 
         if room[r][c] == ".":
             length += 1
         elif length >= 2:
             cnt += 1
             length = 0
+    if length >= 2:
+        cnt += 1
     result[0] += cnt
 for c in range(n):
     cnt = 0
@@ -25,14 +24,13 @@ for c in range(n):
         if c == 0:
             length = 1
             continue
-        elif c == n - 1 and length >= 2:
-            cnt += 1
-            continue
 
         if room[r][c] == ".":
             length += 1
         elif length >= 2:
             cnt += 1
             length = 0
+    if length >= 2:
+        cnt += 1
     result[1] += cnt
 print(*result)
