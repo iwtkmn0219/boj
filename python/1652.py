@@ -21,7 +21,7 @@ for c in range(n):
     cnt = 0
     length = 0
     for r in range(n):
-        if c == 0:
+        if r == 0:
             length = 1
             continue
 
