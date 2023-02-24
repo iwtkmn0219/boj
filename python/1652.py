@@ -5,14 +5,15 @@ for r in range(n):
     cnt = 0
     length = 0
     for c in range(n):
-        if c == 0:
+        if c == 0 and room[r][c] == ".":
             length = 1
             continue
 
         if room[r][c] == ".":
             length += 1
-        elif length >= 2:
-            cnt += 1
+        else:
+            if length >= 2:
+                cnt += 1
             length = 0
     if length >= 2:
         cnt += 1
@@ -21,14 +22,15 @@ for c in range(n):
     cnt = 0
     length = 0
     for r in range(n):
-        if r == 0:
+        if r == 0 and room[r][c] == ".":
             length = 1
             continue
 
         if room[r][c] == ".":
             length += 1
-        elif length >= 2:
-            cnt += 1
+        else:
+            if length >= 2:
+                cnt += 1
             length = 0
     if length >= 2:
         cnt += 1
